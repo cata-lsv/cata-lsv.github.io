@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catarina - Data Engineering Portfolio</title>
+    <title>Catarina V. - Data Engineer</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -177,6 +177,82 @@
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
         }
+
+        /* ===== EDIT: TIMELINE STYLES (new, added only to fix the Experience timeline) ===== */
+        .timeline {
+            list-style: none;
+            padding-left: 1.6rem;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .timeline > li {
+            position: relative;
+            margin-bottom: 1.75rem;
+        }
+
+        /* Dot on the line for each job */
+        .timeline > li::before {
+            content: "";
+            position: absolute;
+            left: calc(-1.6rem - 8.5px);
+            top: 1.3rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 3px solid var(--accent-color);
+        }
+
+        /* Filled dot for the current job */
+        .timeline > li.now::before {
+            background: var(--accent-color);
+        }
+
+        /* Card for each job (same look as .project-card) */
+        .job {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .job h3 {
+            font-size: 1.2rem;
+        }
+
+        .job .org {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .job .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0.1rem 0 0.6rem 0;
+        }
+
+        .job ul {
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .job li {
+            margin: 0.25rem 0;
+        }
+
+        /* Sub-roles inside BI4ALL */
+        .job .sub {
+            margin-top: 0.9rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .job .sub h4 {
+            font-size: 1.02rem;
+            font-weight: 600;
+        }
+        /* ===== END EDIT: TIMELINE STYLES ===== */
     </style>
 </head>
 <body>
@@ -187,21 +263,28 @@
             <!-- Replace with your image link or local path e.g., 'assets/profile.jpg' -->
             <img src="https://github.com/cata-lsv/cata-lsv.github.io/blob/main/profile.jpg?raw=true" alt="Catarina" class="profile-img">
             <h1>Hi, I'm <span>Catarina</span></h1>
-            <p class="tagline">Data Analytics | Data Engineering | Information Systems</p>
+            <p class="tagline">Data Engineering | Information Systems Management</p>
             
             <!-- Your LinkedIn Description -->
             <p class="bio">
-                I’m starting a career in Data Engineering which is pushing me to learn something new everyday and to face new challenges along the way.
+                I am a motivated professional with a strong interest in data, technology, and continuous improvement. I enjoy working with others to solve problems, and contribute to meaningful business outcomes.
+                Naturally curious and always looking for ways to question, refine, and improve existing processes to create greater efficiency and value.
             </p>
 
             <!-- Skills Badges from your LinkedIn keywords -->
             <div class="skills-container">
                 <span class="skill-badge">Python</span>
-                <span class="skill-badge">Databricks</span>
                 <span class="skill-badge">Spark</span>
-                <span class="skill-badge">Data Analytics</span>
+                <span class="skill-badge">PySpark</span>
+                <span class="skill-badge">SQL</span>
                 <span class="skill-badge">Data Engineering</span>
                 <span class="skill-badge">Information Systems</span>
+                <span class="skill-badge">Azure Databricks</span>
+                <span class="skill-badge">Azure DevOps</span>
+                <span class="skill-badge">Azure Data Factory</span>
+                <span class="skill-badge">SAP S/4HANA</span>
+                <span class="skill-badge">SAP Datasphere</span>
+                <span class="skill-badge">Agile</span>
             </div>
 
             <!-- Social Media Links -->
@@ -213,24 +296,103 @@
 <!-- 
         EXPERIENCE -->
         <section id="projects">
-            <h2>Experiences</h2>
+            <h2>Experience</h2>
+            <ol class="timeline">
+
+                <li class="now">
+                <div class="job">
+                    <h3>Data Engineer/Architect</h3>
+                    <div class="org">Ferring Pharmaceuticals</div>
+                    <div class="meta">Jul 2026 – Present · Lisbon, Portugal · Full-time</div>
+                    <!-- TODO: add 2–3 bullets about what you build there (stack, data volume, results) -->
+                    <ul>
+                    <li>Currently I’m responsible for developing and maintaining data flows in Azure Databricks and SAP Datasphere.</li>
+                    <li>Data transformation for silver and gold layer are done in notebooks using PySpark. Azure Data Lake is used for storage and Azure DevOps for CI/CD as well as documentation.</li>
+                    <li>The project follows an agile methodology with the support of Jira.</li>
+                    </ul>
+                </div>
+                </li>
+
+                <li>
+                <div class="job">
+                    <h3>BI4ALL</h3>
+                    <div class="meta">Mar 2025 – Jul 2026 · 1 yr 5 mos · Lisbon, Portugal · Full-time</div>
+
+                    <div class="sub" style="border-top:0;margin-top:0;padding-top:0">
+                    <h4>Associate – Data Engineer</h4>
+                    <div class="meta">Sep 2025 – Jul 2026</div>
+                    <ul>
+                        <li>Worked on a project built around Azure Databricks, Azure Data Lake and Azure DevOps.</li>
+                        <li>Followed an agile methodology, with sprints and backlog managed in Jira.</li>
+                    </ul>
+                    </div>
+
+                    <div class="sub">
+                    <h4>Trainee – Data Engineer</h4>
+                    <div class="meta">Apr 2025 – Sep 2025</div>
+                    <ul>
+                        <li>Developed PySpark and Azure Databricks skills on real client work.</li>
+                    </ul>
+                    </div>
+
+                    <div class="sub">
+                    <h4>Data Academy Trainee</h4>
+                    <div class="meta">Mar 2025 – Apr 2025</div>
+                    <ul>
+                        <li>Intensive programme (XVI Data Academy) covering the key areas of the company: modern BI, big data and ETL, taught by experienced professionals.</li>
+                    </ul>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                <div class="job">
+                    <h3>Accounting &amp; Sourcing Trainee</h3>
+                    <div class="org">Boehringer Ingelheim</div>
+                    <div class="meta">Mar 2024 – Feb 2025 · Lisbon, Portugal · Full-time</div>
+                    <ul>
+                    <li>Worked across controlling, accounting and sourcing.</li>
+                    <li>Used Microsoft Excel and Analysis for Microsoft Excel for financial reporting.</li>
+                    <li>Part of the Talent Forward trainee programme.</li>
+                    </ul>
+                </div>
+                </li>
+
+                <li>
+                <div class="job">
+                    <h3>Employee Relations Intern</h3>
+                    <div class="org">Jerónimo Martins</div>
+                    <div class="meta">Jul 2023 – Aug 2023 · Lisbon, Portugal · Internship</div>
+                    <ul>
+                    <li>Monitored the project management process and produced reports to support its development.</li>
+                    </ul>
+                </div>
+                </li>
+
+            </ol>
+        </section>
+<!-- 
+        PROJECTS TBD -->
+        <!-- 
+        <section id="projects">
+            <h2>Projects</h2>
             <div class="projects-grid">
 
                 <div class="project-card">
-                    <h3>Ferring - Data Engineer/Architect</h3>
-                    <p>Currently wotking in a project built with PySpark in Databricks. Also work with many other technologies such as SAP Datasphere and Microsoft Azure environment.</p>
-                    <!-- <a href="https://github.com/cata-lsv/ferring" target="_blank" class="project-link">View Code <i class="fas fa-arrow-right"></i></a> -->
+                    <h3>Cookie-Jar</h3>
+                    <p>Currently wotking in a personal project built with Python in GitHub.</p>
+                    <a href="https://github.com/cata-lsv/cookie_jar" target="_blank" class="project-link">View Code <i class="fas fa-arrow-right"></i></a>
                 </div>
 
 
                 <div class="project-card">
                     <h3>BI4ALL - Associate Data Engineer</h3>
                     <p>Brief description of another pipeline, ETL process, or data visualization dashboard you created.</p>
-                    <!-- <a href="https://github.com/yourusername/project-two" target="_blank" class="project-link">View Code <i class="fas fa-arrow-right"></i></a> -->
+                    <a href="https://github.com/yourusername/project-two" target="_blank" class="project-link">View Code <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
-
+-->
         <!-- FOOTER -->
         <footer>
             <p>&copy; 2026 Catarina. Built for GitHub Pages.</p>
